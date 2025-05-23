@@ -3,7 +3,7 @@ package com.example.employee.document;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "TAB_EMPLOYEE")
+@Document(collection = "TAB_EMPLOYEE")
 public class Employee {
 
     @Id
@@ -17,7 +17,7 @@ public class Employee {
 
     private int age;
 
-    private EmployeeAddress address;
+    //private EmployeeAddress address;
 
     public String getId() {
         return id;
@@ -51,13 +51,13 @@ public class Employee {
         this.age = age;
     }
 
-    public EmployeeAddress getAddress() {
-        return address;
-    }
-
-    public void setAddress(EmployeeAddress address) {
-        this.address = address;
-    }
+//    public EmployeeAddress getAddress() {
+//        return address;
+//    }
+//
+//    public void setAddress(EmployeeAddress address) {
+//        this.address = address;
+//    }
 
     public String getDeptName() {
         return deptName;
@@ -75,7 +75,7 @@ public class Employee {
                 ", deptName='" + deptName + '\'' +
                 ", empId='" + empId + '\'' +
                 ", age=" + age +
-                ", address=" + address +
+                //", address=" + address +
                 '}';
     }
 }

@@ -19,12 +19,19 @@ public class EmployeeService {
     @Autowired
     MongoTemplate mongoTemplate;
 
-    public Employee getEmployeeById(int id) {
+    public Employee getEmployeeById(String id) {
         Employee employee = null;
         Criteria criteria = Criteria.where("empId").is(id);
         Query searchQuery = new Query(criteria);
         List<Employee> employeeList = mongoTemplate.find(searchQuery, Employee.class);
         return employee = employeeList.get(0) == null ? null : employeeList.get(0);
+    }
+
+
+
+    public List<Employee> getListEmployees() {
+        List<Employee> employeeList = mongoTemplate.findAll(Employee.class);
+        return employeeList;
     }
 
 
